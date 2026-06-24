@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+  double n = 0;
+  
+  bool positive_n = n > 0;
+  bool negative_n = n < 0;
+  bool non_positive_n = n <= 0;
+  bool non_negative_n = n >= 0;
+
+  printf("The number n(%lf) posseses these properties:\n"
+    "Positive number: %d\n"
+    "Negative number: %d\n"
+    "Non positive number: %d\n"
+    "Non negative number: %d", n, positive_n, negative_n, non_positive_n, non_negative_n);
+}
