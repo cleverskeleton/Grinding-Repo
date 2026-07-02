@@ -1,17 +1,88 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int main() {
-  double n = 0;
+void operation(){
+
+}
+
+void addition(double n){
+
+    double n_add;
+    printf("Type the number you want to add:\n");
+    fflush(stdout);
+    scanf("%lf", &n_add);
+    
+    double sum = n + n_add;
+    printf("The product of %lf + %lf is equal to %lf\n", n, n_add, sum);
+  }
+
+void subtraction(double n){
+  double n_sub;
+  printf("Do you want to subtract:(Type JUST the number)\n1.By n\n2.From n\n");
+  fflush(stdout);
+  
+  if (scanf("%lf") == 1)
+  {
+    printf("Type the number you want to subtract by n:\n");
+    fflush(stdout);
+    scanf("%lf", &n_sub);
+
+    double remainder = n_sub - n;
+    printf("The product of %lf - %lf is equal to %lf", n_sub, n, remainder);
+
+  } else {
+    printf("Type the number you want to subtract from n:\n");
+    fflush(stdout);
+    scanf("%lf", &n_sub);
+
+    double remainder = n - n_sub;
+    printf("The product of %lf - %lf is equal to %lf", n, n_sub, remainder);
+  }
+  
+}
+
+void sign_checking(double n){
   
   bool positive_n = n > 0;
   bool negative_n = n < 0;
   bool non_positive_n = n <= 0;
-  bool non_negative_n = n >= 0;
-
+  bool non_negative_n = n >= 0;  
+  
   printf("The number n(%lf) posseses these properties:\n"
-    "Positive number: %d\n"
-    "Negative number: %d\n"
-    "Non positive number: %d\n"
-    "Non negative number: %d", n, positive_n, negative_n, non_positive_n, non_negative_n);
+        "Positive number: %d\n"
+        "Negative number: %d\n"
+        "Non positive number: %d\n"
+        "Non negative number: %d\n", n, positive_n, negative_n, non_positive_n, non_negative_n);
+}
+
+int main() {
+  double n;
+  int operation;
+
+  printf("Type a number:\n");
+  fflush(stdout);
+  scanf("%lf", &n);
+
+  printf("What operation do you want to do?(Type JUST the number):\n1.Sign Checking\n2.Addition\n3.Subtraction\n");
+  fflush(stdout);
+  scanf("%d", &operation);
+
+  switch (operation)
+  {
+  case 1:
+  sign_checking(n);
+    break;
+  
+  case 2:
+  addition(n);
+    break;
+
+  case 3:
+  subtraction(n);
+    break;
+    
+  default:
+  printf("Invalid. Choose a valid option\n");
+    break;
+  }
 }
