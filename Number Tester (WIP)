@@ -1,7 +1,50 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void operation(){
+void quit(){
+  char quit[] = "";
+  printf("(Type 'quit' to quit)");
+  scanf("%s", &quit);
+  if (quit == "quit")
+  {
+    return 0;
+  }
+  
+{
+  return 0;
+}
+}
+
+void sign_checking(double n);
+void addition(double n);
+void subtraction(double n);
+
+void main_operation(double n){
+  
+  int operation;
+  
+  printf("\nWhat operation do you want to do?(Type JUST the number):\n1.Sign Checking\n2.Addition\n3.Subtraction\n");
+  fflush(stdout);
+  scanf("%d", &operation);
+
+    switch (operation)
+  {
+  case 1:
+  sign_checking(n);
+    break;
+  
+  case 2:
+  addition(n);
+    break;
+
+  case 3:
+  subtraction(n);
+    break;
+    
+  default:
+  printf("Invalid. Choose a valid option\n");
+    break;
+  }
 
 }
 
@@ -13,8 +56,8 @@ void addition(double n){
     scanf("%lf", &n_add);
     
     double sum = n + n_add;
-    printf("The product of %lf + %lf is equal to %lf\n", n, n_add, sum);
-  }
+    printf("The sum of %lf + %lf is equal to %lf\n", n, n_add, sum);
+}
 
 void subtraction(double n){
   double n_sub;
@@ -28,7 +71,7 @@ void subtraction(double n){
     scanf("%lf", &n_sub);
 
     double remainder = n_sub - n;
-    printf("The product of %lf - %lf is equal to %lf", n_sub, n, remainder);
+    printf("The difference of %lf - %lf is equal to %lf", n_sub, n, remainder);
 
   } else {
     printf("Type the number you want to subtract from n:\n");
@@ -36,7 +79,7 @@ void subtraction(double n){
     scanf("%lf", &n_sub);
 
     double remainder = n - n_sub;
-    printf("The product of %lf - %lf is equal to %lf", n, n_sub, remainder);
+    printf("The difference of %lf - %lf is equal to %lf", n, n_sub, remainder);
   }
   
 }
@@ -56,33 +99,12 @@ void sign_checking(double n){
 }
 
 int main() {
-  double n;
-  int operation;
 
-  printf("Type a number:\n");
-  fflush(stdout);
-  scanf("%lf", &n);
+double n;
+printf("Type a number");
+scanf("%lf", &n);
 
-  printf("What operation do you want to do?(Type JUST the number):\n1.Sign Checking\n2.Addition\n3.Subtraction\n");
-  fflush(stdout);
-  scanf("%d", &operation);
+  main_operation(n);
 
-  switch (operation)
-  {
-  case 1:
-  sign_checking(n);
-    break;
-  
-  case 2:
-  addition(n);
-    break;
-
-  case 3:
-  subtraction(n);
-    break;
-    
-  default:
-  printf("Invalid. Choose a valid option\n");
-    break;
-  }
+  return 0;
 }
