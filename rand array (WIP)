@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+int k = 0;
+int n;
+
+int n_array[10];
+int length = sizeof(n_array) / sizeof(n_array[0]);
+
+int main(){
+    srand(time(NULL));
+    
+    n_array[k] = n;
+
+    for (int i = 0; i < 10; i++) {
+    n = rand() % 11;
+    k++;
+    
+    printf("%d", n_array[n]);
+    return 0;
+}
+}
