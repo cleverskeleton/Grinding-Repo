@@ -3,22 +3,25 @@
 #include <math.h>
 #include <time.h>
 
-int k = 0;
-int n;
 
-int n_array[10];
-int length = sizeof(n_array) / sizeof(n_array[0]);
+
 
 int main(){
     srand(time(NULL));
-    
+    int k = 0;
+    int n;
+    int n_array[10];
     n_array[k] = n;
 
+
     for (int i = 0; i < 10; i++) {
-    n = rand() % 11;
-    k++;
+    int n = rand() % 1000 + 1;
     
-    printf("%d", n_array[n]);
-    return 0;
+    printf("%d, ", n_array[k]);
+    fflush(stdout);
+    k++;
 }
+
+fflush(stdout);
+return 0;
 }
