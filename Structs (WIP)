@@ -1,0 +1,13 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <math.h>
+
+struct Character{
+    double Age;
+    int16_t Weight;
+    int16_t Strength;
+    int16_t Intelligence;
+    int16_t Dexterity;
+    int16_t Endurace;
+    char*[];
+}
