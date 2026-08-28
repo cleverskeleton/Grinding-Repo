@@ -11,3 +11,8 @@ struct Character{
     int16_t Endurace;
     char*[];
 }
+
+int main(){
+    struct Character x1;
+    struct Character x2;
+}
